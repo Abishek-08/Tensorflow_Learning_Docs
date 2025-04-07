@@ -6,6 +6,12 @@ import tensorflow as tf
 # Hints: 'while reshaping the tensor from one form to another, please the total no of elements before reshape is same as well as after reshaping'
 # For eg: while reshape [2,3] 2D-tensor into 1D-tensor the shape will be [6] not other than [6]. (not [5],[4] because some elements can't be eliminated while reshaping)
 
+
+# Reshaping will "work" for any new shape with the same total number of elements, but it will not do anything useful if you do not respect the order of the axes.
+# Swapping axes in tf.reshape does not work; you need tf.transpose for that.
+
+
+
 original_tensor_2D = tf.constant([[1,2,3],[4,5,6]])
 
 print('Original Shape:')
